@@ -2,6 +2,10 @@
   "name": "rentobuzz_react",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node" : "8.10.0",
+    "npm" : "3.5.2"
+  },
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
