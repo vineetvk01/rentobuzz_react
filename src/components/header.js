@@ -15,6 +15,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import CameraIcon from '@material-ui/icons/Camera';
+import SimpleSelect from './microcomponents/select';
 
 const useStyles = makeStyles((theme) => ({
 	grow: {
@@ -185,11 +186,7 @@ export default function primaryAppBar() {
 					</div>
 					<div className={classes.grow} />
 					<div className={classes.sectionDesktop}>
-						<IconButton aria-label="show 4 new mails" color="inherit">
-							<Badge badgeContent={4} color="secondary">
-								<MailIcon />
-							</Badge>
-						</IconButton>
+						<SimpleSelect />
 						<IconButton aria-label="show 17 new notifications" color="inherit">
 							<Badge badgeContent={17} color="secondary">
 								<NotificationsIcon />

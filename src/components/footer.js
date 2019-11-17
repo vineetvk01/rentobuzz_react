@@ -93,7 +93,7 @@ function Footer() {
 					<PhoneIcon />
 					<br /> +91-80XXXXXXXX <br /> +91-90XXXXXXXX <br />
 					<MailOutlineIcon />
-					<br />feedback@rentobuzz.com
+					<br />info@rentobuzz.com
 				</Typography>
 				<FacebookIcon style={{ color: '#3b5998', fontSize: '5vh' }} />
 				<InstagramIcon style={{ color: '#fff', fontSize: '5vh' }} />
