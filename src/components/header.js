@@ -185,8 +185,8 @@ export default function primaryAppBar() {
 						/>
 					</div>
 					<div className={classes.grow} />
+					<SimpleSelect />
 					<div className={classes.sectionDesktop}>
-						<SimpleSelect />
 						<IconButton aria-label="show 17 new notifications" color="inherit">
 							<Badge badgeContent={17} color="secondary">
 								<NotificationsIcon />
