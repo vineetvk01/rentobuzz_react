@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Footer() {
 	const classes = useStyles();
-	const preventDefault = (event) => event.preventDefault();
 
 	return (
 		<Grid container spacing={2} className={classes.footerStyle}>

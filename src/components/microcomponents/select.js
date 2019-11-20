@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleSelect() {
 	const classes = useStyles();
-	const inputLabel = React.useRef(null);
 
 	const handleChange = (event) => {
 		//setAge(event.target.value);
