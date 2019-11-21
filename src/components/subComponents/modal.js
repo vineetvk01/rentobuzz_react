@@ -9,8 +9,10 @@ import { useTheme } from "@material-ui/core/styles";
 import City from "../microcomponents/city";
 import Bangalore from "../../../public/images/city_logo/bangalore.png";
 import Mumbai from "../../../public/images/city_logo/mumbai.png";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-export default function TransitionsModal() {
+export default function TransitionsModal(props) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -25,8 +27,12 @@ export default function TransitionsModal() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open responsive dialog
+      <Button
+        variant="outlined"
+        style={{ color: "#fff" }}
+        onClick={handleClickOpen}
+      >
+        <LocationOnIcon /> {props.cityName} <ExpandMoreIcon />
       </Button>
       <Dialog
         fullScreen={fullScreen}

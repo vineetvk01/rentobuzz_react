@@ -4,19 +4,17 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import Typography from "@material-ui/core/Typography";
 import CameraIcon from "@material-ui/icons/Camera";
-import SimpleSelect from "./microcomponents/select";
 import SwipeableMenuDrawer from "./subComponents/drawer";
+import TransitionsModal from "./subComponents/modal";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -166,7 +164,11 @@ export default function primaryAppBar() {
     <div className={classes.grow}>
       <AppBar
         position="static"
-        style={{ backgroundColor: "rgba(183, 28, 28,0.9)" }}
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(183, 28, 28,1), rgba(183, 28, 28,0.8))",
+          opacity: "0.9"
+        }}
       >
         <Toolbar>
           <SwipeableMenuDrawer />
@@ -175,21 +177,8 @@ export default function primaryAppBar() {
               <CameraIcon style={{ paddingTop: "7px" }} /> RentoBuzz
             </Typography>
           </Link>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Ask me..."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
           <div className={classes.grow} />
-          <SimpleSelect />
+          <TransitionsModal cityName="Bangalore" />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
