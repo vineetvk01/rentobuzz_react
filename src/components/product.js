@@ -1,8 +1,24 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Divider } from '@material-ui/core';
-import IconBreadcrumbs from './microcomponents/breadCrums';
+import { Paper, Divider } from '@material-ui/core';
+import CarouselView from './subComponents/carousel';
+import Typography from '@material-ui/core/Typography';
+import CustomizedExpansionPanels from './subComponents/expantionList';
+import DatePicker from './microcomponents/datePicker';
 import ProductCard from './microcomponents/productsItem';
+import IconBreadcrumbs from './microcomponents/breadCrums';
+
+const product = {
+	id: 1,
+	productKey: 'kyji1020293',
+	name: 'Nikon Camera',
+	type: 'Camera',
+	category: 'camera',
+	rent: '220',
+	description: 'This is the camera description. Please check me out',
+	image_url: 'https://yougraphy-blog.canvera.com/wp-content/uploads/2018/06/2-1.jpg',
+	productUrl: '/product/city'
+};
 
 const products = [
 	{
@@ -50,7 +66,7 @@ const products = [
 	}
 ];
 
-class Body extends React.Component {
+class Product extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -62,22 +78,45 @@ class Body extends React.Component {
 
 	render() {
 		return (
-			<div style={{ margin: '0px 10%' }}>
-				<Grid container spacing={4}>
-					<Grid item xs={12}>
-						<Divider />
-						<IconBreadcrumbs />
-						<Divider />
+			<div style={{ margin: '1.5% 10%' }}>
+				<Divider />
+				<IconBreadcrumbs />
+				<Divider />
+				<Grid container spacing={4} style={{ marginTop: '2%' }}>
+					<Grid item sm={6}>
+						<CarouselView images={product.image_url} />
 					</Grid>
-					{products.map((element) => (
-						<Grid item xs={3}>
-							<ProductCard key={element.id.toString()} item={element} />
-						</Grid>
-					))}
+					<Grid item sm={6}>
+						<DatePicker />
+					</Grid>
+					<Grid item sm={12}>
+						<Paper style={{ padding: '4%' }}>
+							<Typography variant="h5" component="h3" align="left">
+								Nikon Camera 123X
+							</Typography>
+						</Paper>
+					</Grid>
+					<Grid item sm={12}>
+						<CustomizedExpansionPanels />
+					</Grid>
+					<Grid item sm={12}>
+						<Paper style={{ padding: '4%' }}>
+							<Typography variant="h5" component="h3" align="left">
+								Related Products :
+							</Typography>
+							<Grid container spacing={4}>
+								{products.map((element) => (
+									<Grid item xs={3}>
+										<ProductCard key={element.id.toString()} item={element} />
+									</Grid>
+								))}
+							</Grid>
+						</Paper>
+					</Grid>
 				</Grid>
 			</div>
 		);
 	}
 }
 
-export default Body;
+export default Product;
